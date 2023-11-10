@@ -8,8 +8,19 @@ entities.forEach(entity => {
   entity_ids.push(entity.dataset.entityId)
 })
 
-let reqBody = {}
-reqBody.entities = entity_ids;
+let reqBody = {
+  entities: entity_ids,
+};
+
+const fillEntities = (payloads, nodes) => {
+  payloads.forEach(payload => {
+    const result = Array.from(nodes)
+      .find((node) => {
+        return node.dataset.entityId === payload.entity_id; 
+      });
+    result.innerHTML += payload.adm
+  })
+}
 
 (async (nodes) => {
   
@@ -26,11 +37,7 @@ reqBody.entities = entity_ids;
       return res.payloads
     })
     .catch(e => console.log(e));
+ 
+    fillEntities(payloads, nodes)
   
-  
-  payloads.forEach(payload => {
-    const result = Array.from(nodes)
-      .find((node) => node.dataset.entityId === payload.entity_id);
-    result.innerHTML += payload.adm
-  })
 })(entities)
