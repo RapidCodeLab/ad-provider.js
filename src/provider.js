@@ -1,4 +1,4 @@
-let endpoint = "http://127.0.0.1:8080/http://127.0.0.1:3060/rtb/v1"
+let endpoint = "http://b.prebidlab.online/rtb/v1"
 
 let entities = document.body.querySelectorAll("[data-entity-id]")
 
