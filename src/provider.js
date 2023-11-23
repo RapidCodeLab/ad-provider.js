@@ -1,4 +1,4 @@
-let endpoint = "http://b.prebidlab.online/rtb/v1"
+let endpoint = "https://b.prebidlab.online/rtb/v1"
 
 let entities = document.body.querySelectorAll("[data-entity-id]")
 
