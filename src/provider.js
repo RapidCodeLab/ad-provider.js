@@ -27,6 +27,9 @@ const fillEntities = (payloads, nodes) => {
   let payloads = await fetch(endpoint, {
       method: 'POST',
       headers: {
+      mode: "no-cors",
+      cache: "no-cache",
+      headers:{  
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
